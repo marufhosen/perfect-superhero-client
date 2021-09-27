@@ -25,7 +25,7 @@ const CreateHero = () => {
   // handle post new superhero to database
 
   const handleAddHero = () => {
-    const url = "http://localhost:8080/addSuperhero";
+    const url = "https://rocky-wildwood-90902.herokuapp.com/addSuperhero";
     fetch(url, {
       method: "POST",
       headers: { "content-type": "application/json" },

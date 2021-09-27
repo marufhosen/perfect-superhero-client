@@ -27,7 +27,9 @@ const ComparisonChart = (props) => {
   //get super hero characteristics from mongoDB
 
   useEffect(() => {
-    fetch("http://localhost:8080/superHeroes/" + superheroId)
+    fetch(
+      "https://rocky-wildwood-90902.herokuapp.com/superHeroes/" + superheroId
+    )
       .then((res) => res.json())
       .then((data) => setGetsuperHeroData(data));
   }, [superheroId]);
