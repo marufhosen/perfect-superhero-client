@@ -1,0 +1,20 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 20px;
+  overflow: hidden;
+}
+
+li {
+  float: right;
+}
+
+li .header-item {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 10px 14px;
+  text-decoration: none;
+  background-color: #bdbdbd;
+  margin-right: 50px;
+}

@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import CreateHero from "./components/CreateHero/CreateHero";
+import Header from "./components/Header/Header";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import ComparisonWithHero from "./components/ComparisonWithHero/ComparisonWithHero";
+import { createContext, useState } from "react";
+
+export const superHeroContext = createContext();
 
 function App() {
+  const [checkSupHeroChar, setCheckSupHeroChar] = useState({});
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <superHeroContext.Provider value={[checkSupHeroChar, setCheckSupHeroChar]}>
+      <Router>
+        <Header></Header>
+        <Switch>
+          <Route path="/createSuperHero">
+            <CreateHero></CreateHero>
+          </Route>
+          <Route path="/interview">
+            <ComparisonWithHero></ComparisonWithHero>
+          </Route>
+          <Route exact path="/">
+            <CreateHero></CreateHero>
+          </Route>
+        </Switch>
+      </Router>
+    </superHeroContext.Provider>
   );
 }
 
